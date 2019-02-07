@@ -1,0 +1,10 @@
+# Local libraries
+include_directories(${LandmarkDetector_SOURCE_DIR}/include)
+
+add_executable(FaceLandmarkImgServer FaceLandmarkImgServer.cpp)
+target_link_libraries(FaceLandmarkImgServer LandmarkDetector)
+target_link_libraries(FaceLandmarkImgServer FaceAnalyser)
+target_link_libraries(FaceLandmarkImgServer GazeAnalyser)
+target_link_libraries(FaceLandmarkImgServer Utilities)
+
+install (TARGETS FaceLandmarkImgServer DESTINATION bin)
